@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { useEffect, useState } from "react";
 import {
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    StyleSheet,
+    Alert,
     Animated,
     KeyboardAvoidingView,
     Platform,
     ScrollView,
-    Alert,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
 import { supabase } from "../../../lib/supabase";
 
 // ─── Theme (StockMate — Clean Light) ──────────────────────────────────────────
@@ -78,7 +78,7 @@ export default function ForgotPasswordScreen() {
         }
 
         // GitHub Pages hosted reset page
-        const redirectTo = "https://blubbaeri.github.io/stockmate/web/reset-password.html";
+        const redirectTo = "https://blubbaeri.github.io/StockMate/web/reset-password.html";
 
         setLoading(true);
         const { error } = await supabase.auth.resetPasswordForEmail(trimmed, {
